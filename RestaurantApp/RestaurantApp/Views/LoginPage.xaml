@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RestaurantApp.Views.LoginPage"
+             BackgroundColor="#DC143C">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0" Margin="0,60,0,0" HorizontalOptions="Center">
+                <Label Text="MarmitApp" FontSize="Title" FontFamily="Segoe Script" TextColor="White"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Margin="40,0,40,0" VerticalOptions="CenterAndExpand">
+                <Entry Placeholder="Email" PlaceholderColor="White" x:Name="EntryEmail"/>
+                <Entry Placeholder="Senha" PlaceholderColor="White" x:Name="EntryPassword" IsPassword="True"/>
+                <Label Text="Esqueceu a senha" TextColor="White" HorizontalOptions="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapForgotPassword" Tapped="TapForgotPassword_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Text="Login" BorderColor="White" BackgroundColor="#DC143C" TextColor="White" CornerRadius="30" HeightRequest="40" x:Name="BtnLogin" Clicked="BtnLogin_Clicked" BorderWidth="1.5" ></Button>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Padding="20" Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Não possui uma conta?" TextColor="White"></Label>
+                <Label Text="Cadastrar" TextColor="White">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TapSignUp" Tapped="TapSignUp_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

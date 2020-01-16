@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             mc:Ignorable="d"
+             x:Class="RestaurantApp.Views.Administrator.MenuAdministratorPage">
+    <ContentPage.Content>
+        <Grid>
+            <ListView x:Name="LvMenu"
+                      SeparatorVisibility="None" 
+                      HasUnevenRows="True"  
+                      IsPullToRefreshEnabled="False"
+                      ItemSelected="LvMenu_ItemSelected"
+                      ItemsSource="{Binding Menus}"
+                      CachingStrategy="RecycleElement">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+
+                                <forms:CachedImage LoadingPlaceholder="placeholderimage.png" HeightRequest="150" Aspect="Fill"
+                                                            DownsampleToViewSize="true"
+                                                            Source = "{Binding Image}" CacheType="All">
+                                </forms:CachedImage>
+                                <BoxView BackgroundColor="Black" Opacity="0.4"/>
+                                <Label Text="{Binding Name}" FontSize="Large" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

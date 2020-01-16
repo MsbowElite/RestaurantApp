@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <AssemblyName>RestaurantApp</AssemblyName>
+    <RootNamespace>RestaurantApp</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="jose-jwt" Version="2.4.0" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="5.5.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.3.0.19" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCalendar" Version="17.3.0.19" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="17.3.0.19" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="4.1.0.673156" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Animations\" />
+    <Folder Include="Views\Customer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Administrator\Dishes\DishCalendarsAdministratorPage.xaml.cs">
+      <DependentUpon>DishCalendarsAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Dishes\DishCalendarAdministratorPage.xaml.cs">
+      <DependentUpon>DishCalendarAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Deliverers\DelivererDetailAdministratorPage.xaml.cs">
+      <DependentUpon>DelivererDetailAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Deliverers\DeliverersAdministratorPage.xaml.cs">
+      <DependentUpon>DeliverersAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Deliverers\NewDelivererAdministratorPage.xaml.cs">
+      <DependentUpon>NewDelivererAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Dishes\DisheDetailAdministratorPage.xaml.cs">
+      <DependentUpon>DisheDetailAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Dishes\DishesAdministratorPage.xaml.cs">
+      <DependentUpon>DishesAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Dishes\NewDishCalendarAdministratorPage.xaml.cs">
+      <DependentUpon>NewDishCalendarAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Dishes\NewDishAdministratorPage.xaml.cs">
+      <DependentUpon>NewDishAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Menus\MenusAdministratorPage.xaml.cs">
+      <DependentUpon>MenusAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Menus\MenuDetailAdministratorPage.xaml.cs">
+      <DependentUpon>MenuDetailAdministratorPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Administrator\Menus\NewMenuAdministratorPage.xaml.cs">
+      <DependentUpon>NewMenuAdministratorPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Administrator\Dishes\DishCalendarAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Administrator\DeliverersAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Administrator\Ingredients\IngredientDetailAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Administrator\Ingredients\NewIngredientAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Administrator\MasterAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Administrator\MenuAdministratorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

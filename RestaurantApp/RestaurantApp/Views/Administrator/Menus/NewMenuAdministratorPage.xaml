@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="RestaurantApp.Views.Administrator.Menus.NewMenuAdministratorPage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f9f9fa" Spacing="20" Padding="15">
+            <Label Text="Nome" FontSize="Medium" />
+            <Entry Text="{Binding Item.Name}" Placeholder="Nome do Menu" FontSize="Small" />
+            <Label Text="Descrição" FontSize="Medium" />
+            <Editor Text="{Binding Item.Description}" Placeholder="Descrição do Menu" FontSize="Small" Margin="0" />
+            <StackLayout BackgroundColor="#f4f4f6" Spacing="20" Padding="15" IsEnabled="{Binding NewInverted}" IsVisible="{Binding NewInverted}">
+                <StackLayout Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Pratos:" FontSize="Title"  Grid.Row="0" Grid.Column="0" />
+                        <Button Text="Add" HorizontalOptions="End" x:Name="AddDish" Clicked="AddDish_Clicked" Grid.Row="0" Grid.Column="2" />
+                    </Grid>
+
+                </StackLayout>
+                <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Dishes}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label Text="{Binding Name}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="Small" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
